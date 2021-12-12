@@ -22,16 +22,19 @@ document.addEventListener("DOMContentLoaded", function(){
         globalKeys.splice(4,3);
 
         globalKeys.forEach(item => {
+            let  globalInfo = document.createElement("div")
+            globalInfo.className= "global-stats"
+            globalSection.appendChild(globalInfo)
+
             let info = document.createElement("h1");
-            info.className= "global-stats"
             info.innerHTML = item.replace(/([a-z])([A-Z])/g, '$1 $2');
-            globalSection.appendChild(info)
+            globalInfo.appendChild(info)
     
             main.insertBefore(globalTitle, globalSection)
 
             let infoData = document.createElement("h2")
             infoData.innerHTML = global[item];
-            info.appendChild(infoData)
+            globalInfo.appendChild(infoData)
         })
 
         //Elementos para cada país
@@ -55,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function(){
             pais.className = "pais"
             countrySection.appendChild(pais)
             let bandeira = document.createElement("img");
-            bandeira.src = "https://flagcdn.com/h240/" + paisCode + ".png";
+            bandeira.src = "https://flagcdn.com/" + paisCode + ".svg";
             pais.appendChild(bandeira)
 
             //Informações sobre os países
