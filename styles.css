@@ -1,29 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;800&display=swap');
 
+:root {
+    --bg-color: #FDFFFC;
+    --main-color: #FB4B4E;
+    --secondary-color: #275DAD;
+    --dark-color: #1D1D2C;
+    --green-color: #60A561;
+}
+
 body {
-    background-color: cornsilk;
+    background-color: var(--bg-color);
     text-align: center;
     font-family: 'Inter', sans-serif;
 }
 
 #covid {
     text-align: center;
+    color: var(--main-color);
 }
 
 .title {
     text-align: center;
+    color: var(--dark-color);
 }
 
 #global {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    gap: 1rem;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .global-stats {
+    background-color: var(--main-color);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin: 1rem;
+}
 
+.global-stats h1 {
+    color: var(--bg-color);
+}
+
+.global-stats h2 {
+    color: var(--dark-color);
 }
 
 input {
@@ -35,22 +53,48 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    gap: 1rem;
+    gap: .5rem;
     justify-items: center;
+    align-items: start;
+    margin: 2rem;
 }
 
 button {
     font-size: 1rem;
 }
 
+.pais h1 {
+    color: var(--bg-color);
+    text-align: center;
+}
+
 .pais {
     text-align: center;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center  ;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 10px;
 }
+
+.pais img {
+    width: 20rem;
+}
+
+.pais:hover {
+    cursor: pointer;
+}
+
 .pais-card {
     display: none;
+    height: 0;
 }
 
 .country-info {
     display: block;
+    animation: widthAnimation 1s ease-in;
+    height: 100%;
 }
+
