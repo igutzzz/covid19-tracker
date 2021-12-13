@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;800&display=swap');
 
 :root {
-    --bg-color: #FDFFFC;
+    --bg-color: #275DAD;
     --main-color: #FB4B4E;
-    --secondary-color: #275DAD;
+    --secondary-color: #FDFFFC;
     --dark-color: #1D1D2C;
     --green-color: #60A561;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -26,6 +30,7 @@ body {
 
 #global {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -37,7 +42,7 @@ body {
 }
 
 .global-stats h1 {
-    color: var(--bg-color);
+    color: var(--secondary-color);
 }
 
 .global-stats h2 {
@@ -64,7 +69,7 @@ button {
 }
 
 .pais h1 {
-    color: var(--bg-color);
+    color: var(--secondary-color);
     text-align: center;
 }
 
@@ -74,7 +79,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center  ;
-    background-color: var(--secondary-color);
+    background-color: var(--green-color);
     padding: 1rem;
     border-radius: 10px;
 }
@@ -89,12 +94,30 @@ button {
 
 .pais-card {
     display: none;
-    height: 0;
+    max-height: 0;
+    transition: max-height 1s ease-in;
 }
 
 .country-info {
     display: block;
-    animation: widthAnimation 1s ease-in;
-    height: 100%;
+    max-height: 100%;
+    color: var(--secondary-color);
 }
 
+@media (min-width: 400px) {
+    #country {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (min-width: 800px) {
+    #country {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    #country {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
